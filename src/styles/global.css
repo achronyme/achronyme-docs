@@ -1,8 +1,8 @@
+/* Custom font imports - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-
-/* Custom font imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* Theme configuration */
 @theme {
@@ -10,18 +10,18 @@
   --font-display: 'Lexend', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Brand colors */
-  --color-brand-50: oklch(0.97 0.02 220);
-  --color-brand-100: oklch(0.93 0.04 220);
-  --color-brand-200: oklch(0.87 0.08 220);
-  --color-brand-300: oklch(0.78 0.12 220);
-  --color-brand-400: oklch(0.68 0.16 220);
-  --color-brand-500: oklch(0.58 0.18 220);
-  --color-brand-600: oklch(0.50 0.18 220);
-  --color-brand-700: oklch(0.42 0.16 220);
-  --color-brand-800: oklch(0.35 0.12 220);
-  --color-brand-900: oklch(0.28 0.08 220);
-  --color-brand-950: oklch(0.20 0.04 220);
+  /* Brand colors - Purple palette */
+  --color-brand-50: oklch(0.97 0.02 285);
+  --color-brand-100: oklch(0.93 0.04 285);
+  --color-brand-200: oklch(0.87 0.08 285);
+  --color-brand-300: oklch(0.78 0.12 285);
+  --color-brand-400: oklch(0.68 0.16 285);
+  --color-brand-500: oklch(0.58 0.18 285);
+  --color-brand-600: oklch(0.50 0.18 285);
+  --color-brand-700: oklch(0.42 0.16 285);
+  --color-brand-800: oklch(0.35 0.12 285);
+  --color-brand-900: oklch(0.28 0.08 285);
+  --color-brand-950: oklch(0.20 0.04 285);
 }
 
 /* Base styles */
@@ -32,12 +32,11 @@
   }
 
   body {
-    @apply font-sans text-slate-900 bg-white antialiased;
-    @apply dark:text-slate-100 dark:bg-slate-900;
+    @apply font-sans text-slate-100 bg-slate-950 antialiased;
   }
 
   ::selection {
-    @apply bg-brand-200 dark:bg-brand-800;
+    @apply bg-brand-800;
   }
 
   /* Scrollbar styling */
@@ -46,32 +45,32 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-100 dark:bg-slate-800;
+    @apply bg-slate-900;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+    @apply bg-slate-700 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-slate-400 dark:bg-slate-500;
+    @apply bg-slate-600;
   }
 }
 
 /* Typography overrides for prose */
 @layer components {
   .prose {
-    --tw-prose-body: theme('colors.slate.700');
-    --tw-prose-headings: theme('colors.slate.900');
-    --tw-prose-links: theme('colors.brand.600');
-    --tw-prose-code: theme('colors.brand.700');
+    --tw-prose-body: theme('colors.slate.300');
+    --tw-prose-headings: theme('colors.white');
+    --tw-prose-links: theme('colors.brand.400');
+    --tw-prose-code: theme('colors.brand.300');
     --tw-prose-pre-bg: theme('colors.slate.900');
 
-    @apply dark:prose-invert;
+    @apply prose-invert;
   }
 
   .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono;
+    @apply bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono;
   }
 
   .prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before,
@@ -80,11 +79,11 @@
   }
 
   .prose :where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    @apply bg-slate-900 dark:bg-slate-950 rounded-lg;
+    @apply bg-slate-900 rounded-lg;
   }
 
   .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-    @apply text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 no-underline hover:underline;
+    @apply text-brand-400 hover:text-brand-300 no-underline hover:underline;
   }
 
   .prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -99,10 +98,28 @@
   }
 
   .bg-gradient-brand {
-    @apply bg-gradient-to-r from-brand-500 to-cyan-500;
+    @apply bg-gradient-to-r from-purple-500 to-violet-500;
   }
 
   .text-gradient-brand {
-    @apply bg-gradient-brand bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-500 to-violet-500 bg-clip-text text-transparent;
+  }
+
+  .animated-gradient {
+    background: linear-gradient(90deg, #a855f7, #8b5cf6, #7c3aed, #6366f1, #8b5cf6, #a855f7);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s linear infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
   }
 }

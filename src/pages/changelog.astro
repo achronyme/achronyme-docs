@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import MobileNav from '../components/layout/MobileNav.astro';
+
+// Version data extracted from CHANGELOG.md
+const versions = [
+  {
+    version: '0.6.2',
+    date: '2025-11-15',
+    status: 'Unreleased',
+    highlights: [
+      'Comprehensive Pattern Matching',
+      'Error Handling System (try/catch/throw)',
+      'Destructuring Assignment',
+      'Guard Clause Syntax Changes'
+    ],
+    breaking: true
+  },
+  {
+    version: '0.6.1',
+    date: '2025-11-15',
+    status: 'Released',
+    highlights: [
+      'Function Type Syntax Change',
+      'Opaque Function Type',
+      'Lambda Parsing Bug Fixes'
+    ],
+    breaking: true
+  },
+  {
+    version: '0.6.0',
+    date: '2025-11-15',
+    status: 'Released',
+    highlights: [
+      'Phase 1 Iterators (Generators)',
+      'Generator as Static Type',
+      'Tier 3 Array Functions',
+      'CI/CD Infrastructure',
+      'Advanced Type System',
+      'Module System',
+      'Graph Theory & PERT/CPM'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.5.3',
+    date: '2025-11-06',
+    status: 'Released',
+    highlights: [
+      'Conditional Expressions',
+      'Piecewise Functions',
+      'Parser Migration to Pest'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.5.2',
+    date: '2025-11-05',
+    status: 'Released',
+    highlights: [
+      'Built-in Function Reference',
+      'Modular Function Registry'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.5.1',
+    date: '2025-01-05',
+    status: 'Released',
+    highlights: [
+      'Numerical Calculus Module',
+      'WASM Bindings',
+      'TypeScript SDK Updates'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.5.0',
+    date: '2025-11-04',
+    status: 'Released',
+    highlights: [
+      'Rust WASM Integration',
+      'TypeScript SDK v2.0',
+      '5.25x Performance Improvement',
+      'SOC Language Evaluator'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.4.0',
+    date: '2025-11-01',
+    status: 'Released',
+    highlights: [
+      'Matrix Decompositions (LU, QR, SVD)',
+      'Eigensolvers',
+      'Memory Safety Fix'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.3.0',
+    date: '2025-11-01',
+    status: 'Released',
+    highlights: [
+      '10-1000x Performance',
+      'Complex Types',
+      'DSP Fast Path'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.2.0',
+    date: '2025-10-26',
+    status: 'Released',
+    highlights: [
+      '25+ Mathematical Functions',
+      'Constants Registry',
+      'Function Registry'
+    ],
+    breaking: false
+  },
+  {
+    version: '0.1.0',
+    date: '2025-10-26',
+    status: 'Released',
+    highlights: [
+      'Initial Release',
+      'WebAssembly Core',
+      'Basic Operators'
+    ],
+    breaking: false
+  }
+];
+---
+
+<BaseLayout title="Changelog">
+  <Header />
+  <MobileNav />
+
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative border-b border-slate-800">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Changelog
+          </h1>
+          <p class="mt-4 text-lg text-gray-400">
+            All notable changes to Achronyme SOC
+          </p>
+          <div class="mt-6 flex justify-center gap-4">
+            <a
+              href="https://github.com/achronyme/achronyme-core/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm font-medium text-purple-400 hover:text-purple-300"
+            >
+              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="space-y-8">
+        {versions.map((release) => (
+          <div class="relative">
+            <div class="rounded-lg bg-slate-900 p-6 ring-1 ring-slate-800">
+              <div class="flex flex-wrap items-center gap-4 mb-6">
+                <h2 class="font-display text-2xl font-bold text-white">
+                  v{release.version}
+                </h2>
+                <span class="text-sm text-gray-400">
+                  {release.date}
+                </span>
+                <div class="flex items-center gap-3">
+                  {release.status === 'Unreleased' && (
+                    <span class="rounded-full bg-yellow-500/10 px-3 py-1 text-xs font-medium text-yellow-400 ring-1 ring-yellow-500/25">
+                      Unreleased
+                    </span>
+                  )}
+                  {release.breaking && (
+                    <span class="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400 ring-1 ring-red-500/25">
+                      Breaking Changes
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              <ul class="space-y-2">
+                {release.highlights.map((highlight) => (
+                  <li class="flex items-start">
+                    <svg class="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    <span class="text-gray-300">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-4 pt-4 border-t border-slate-800">
+                <a
+                  href={`https://github.com/achronyme/achronyme-core/releases/tag/v${release.version}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  View full release notes
+                  <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800">
+      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="text-center text-sm text-gray-400">
+          <p>Achronyme SOC - Scientific Operations Calculator</p>
+          <p class="mt-2">
+            Following <a href="https://keepachangelog.com/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300">Keep a Changelog</a> and <a href="https://semver.org/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300">Semantic Versioning</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>

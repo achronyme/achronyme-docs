@@ -9,7 +9,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
 
 {filteredHeadings.length > 0 && (
   <div class="space-y-4">
-    <h4 class="font-display text-sm font-semibold text-slate-900 dark:text-white">
+    <h4 class="font-display text-sm font-semibold text-white">
       On this page
     </h4>
     <nav>
@@ -18,7 +18,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
           <li class={heading.depth === 3 ? 'ml-4' : ''}>
             <a
               href={`#${heading.slug}`}
-              class="block text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+              class="block text-slate-400 hover:text-white transition-colors"
               x-data="{ active: false }"
               x-init="
                 const observer = new IntersectionObserver(
@@ -36,7 +36,7 @@ const filteredHeadings = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
                 const target = document.getElementById($el.getAttribute('href').slice(1));
                 if (target) observer.observe(target);
               "
-              :class="active && 'font-medium text-brand-600 dark:text-brand-400'"
+              :class="active && 'font-medium text-purple-400'"
             >
               {heading.text}
             </a>

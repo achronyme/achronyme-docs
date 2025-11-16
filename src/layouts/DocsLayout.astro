@@ -26,7 +26,7 @@ const { prev, next } = findPrevNext(Astro.url.pathname);
       <div class="flex">
         <!-- Left sidebar (navigation) -->
         <div class="hidden lg:flex lg:flex-shrink-0">
-          <div class="w-64 py-8 pr-8">
+          <div class="w-64 py-8 pr-8 border-r border-slate-800">
             <div class="sticky top-20">
               <Navigation />
             </div>
@@ -34,27 +34,27 @@ const { prev, next } = findPrevNext(Astro.url.pathname);
         </div>
 
         <!-- Main content -->
-        <div class="min-w-0 flex-1 py-8">
-          <article class="prose prose-slate dark:prose-invert max-w-none">
-            <h1 class="font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+        <div class="min-w-0 flex-1 py-8 lg:pl-8">
+          <article class="prose prose-invert max-w-none">
+            <h1 class="font-display text-4xl font-bold tracking-tight text-white">
               {title}
             </h1>
-            <p class="lead text-xl text-slate-600 dark:text-slate-400">
+            <p class="lead text-xl text-slate-400">
               {description}
             </p>
 
             <slot />
           </article>
 
-          <div class="mt-12 border-t border-slate-200 dark:border-slate-800 pt-6">
+          <div class="mt-12 border-t border-slate-800 pt-6">
             <PrevNextLinks prev={prev} next={next} />
           </div>
         </div>
 
         <!-- Right sidebar (table of contents) -->
         <div class="hidden xl:flex xl:flex-shrink-0">
-          <div class="w-64 py-8 pl-8">
-            <div class="sticky top-20">
+          <div class="w-64 py-8 pl-8 border-l border-slate-800">
+            <div class="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto">
               <TableOfContents headings={headings} />
             </div>
           </div>

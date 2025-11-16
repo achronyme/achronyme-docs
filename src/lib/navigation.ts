@@ -15,19 +15,16 @@ export const navigation: NavSection[] = [
     items: [
       { title: 'Introduction', href: '/docs/getting-started/introduction' },
       { title: 'Installation', href: '/docs/getting-started/installation' },
-      { title: 'Quick Start', href: '/docs/getting-started/quick-start' },
-      { title: 'REPL', href: '/docs/getting-started/repl' },
+      { title: 'Syntax Basics', href: '/docs/getting-started/syntax-basics' },
     ],
   },
   {
     title: 'Core Language',
     items: [
-      { title: 'Syntax Basics', href: '/docs/core-language/syntax-basics' },
       { title: 'Data Types', href: '/docs/core-language/data-types' },
       { title: 'Operators', href: '/docs/core-language/operators' },
       { title: 'Variables', href: '/docs/core-language/variables' },
       { title: 'Functions', href: '/docs/core-language/functions' },
-      { title: 'Records', href: '/docs/core-language/records' },
       { title: 'Control Flow', href: '/docs/core-language/control-flow' },
     ],
   },
@@ -36,6 +33,7 @@ export const navigation: NavSection[] = [
     items: [
       { title: 'Arrays & Tensors', href: '/docs/data-structures/arrays-tensors' },
       { title: 'Indexing & Slicing', href: '/docs/data-structures/indexing-slicing' },
+      { title: 'Records', href: '/docs/data-structures/records' },
       { title: 'Strings', href: '/docs/data-structures/strings' },
     ],
   },
@@ -63,7 +61,6 @@ export const navigation: NavSection[] = [
       { title: 'DSP', href: '/docs/specialized-modules/dsp' },
       { title: 'Graph Theory', href: '/docs/specialized-modules/graph-theory' },
       { title: 'Optimization', href: '/docs/specialized-modules/optimization' },
-      { title: 'Utilities', href: '/docs/specialized-modules/utilities' },
     ],
   },
   {
@@ -74,20 +71,6 @@ export const navigation: NavSection[] = [
       { title: 'Performance', href: '/docs/advanced-topics/performance' },
       { title: 'Mutability', href: '/docs/advanced-topics/mutability' },
       { title: 'I/O & Persistence', href: '/docs/advanced-topics/io-persistence' },
-      { title: 'Modules', href: '/docs/advanced-topics/modules' },
-      { title: 'While Loops', href: '/docs/advanced-topics/while-loops' },
-      { title: 'Type System', href: '/docs/advanced-topics/type-system' },
-      { title: 'Error Handling', href: '/docs/advanced-topics/error-handling' },
-      { title: 'Pattern Matching', href: '/docs/advanced-topics/pattern-matching' },
-      { title: 'Destructuring', href: '/docs/advanced-topics/destructuring' },
-    ],
-  },
-  {
-    title: 'Reference',
-    items: [
-      { title: 'Language Reference', href: '/docs/reference/language-reference' },
-      { title: 'Standard Library', href: '/docs/reference/standard-library' },
-      { title: 'CLI Reference', href: '/docs/reference/cli-reference' },
     ],
   },
 ];
