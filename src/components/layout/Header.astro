@@ -1,0 +1,64 @@
+---
+import ThemeToggle from '../ui/ThemeToggle.astro';
+import Search from '../ui/Search.astro';
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:border-slate-800 dark:bg-slate-900/95 supports-[backdrop-filter]:dark:bg-slate-900/80">
+  <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2">
+          <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-500 flex items-center justify-center">
+            <span class="text-white font-bold text-sm">A</span>
+          </div>
+          <span class="font-display text-xl font-semibold text-slate-900 dark:text-white">
+            Achronyme
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop navigation -->
+      <nav class="hidden md:flex items-center space-x-6">
+        <a
+          href="/docs"
+          class="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+        >
+          Documentation
+        </a>
+        <a
+          href="/changelog"
+          class="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+        >
+          Changelog
+        </a>
+        <a
+          href="https://github.com/achronyme/soc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+        >
+          GitHub
+        </a>
+      </nav>
+
+      <!-- Right side actions -->
+      <div class="flex items-center space-x-4">
+        <Search />
+        <ThemeToggle />
+
+        <!-- Mobile menu button -->
+        <button
+          type="button"
+          class="lg:hidden rounded-md p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+          @click="$store.nav.toggle()"
+        >
+          <span class="sr-only">Open menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

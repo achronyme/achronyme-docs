@@ -1,0 +1,31 @@
+---
+
+---
+
+<button
+  type="button"
+  class="hidden sm:flex items-center space-x-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white transition-colors"
+  @click="$store.search.toggle()"
+  x-data
+>
+  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+  </svg>
+  <span>Search...</span>
+  <kbd class="hidden lg:inline-flex items-center rounded border border-slate-300 px-1.5 font-mono text-xs dark:border-slate-600">
+    <span class="text-xs">⌘</span>K
+  </kbd>
+</button>
+
+<!-- Mobile search button -->
+<button
+  type="button"
+  class="sm:hidden rounded-md p-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors"
+  @click="$store.search.toggle()"
+  x-data
+>
+  <span class="sr-only">Search</span>
+  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+  </svg>
+</button>

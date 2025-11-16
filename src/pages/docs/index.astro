@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import MobileNav from '../../components/layout/MobileNav.astro';
+import Navigation from '../../components/layout/Navigation.astro';
+import QuickLinks from '../../components/content/QuickLinks.astro';
+import QuickLink from '../../components/content/QuickLink.astro';
+---
+
+<BaseLayout title="Documentation" description="Complete documentation for the Achronyme programming language">
+  <div class="min-h-full">
+    <Header />
+    <MobileNav />
+
+    <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
+      <div class="flex">
+        <!-- Left sidebar -->
+        <div class="hidden lg:flex lg:flex-shrink-0">
+          <div class="w-64 py-8 pr-8">
+            <div class="sticky top-20">
+              <Navigation />
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="min-w-0 flex-1 py-8">
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            <h1 class="font-display text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Documentation
+            </h1>
+            <p class="lead text-xl text-slate-600 dark:text-slate-400">
+              Learn how to use Achronyme for scientific computing, data analysis, and mathematical operations.
+            </p>
+
+            <h2>Getting Started</h2>
+            <p>
+              New to Achronyme? Start here to learn the basics and get your environment set up.
+            </p>
+
+            <QuickLinks>
+              <QuickLink
+                title="Introduction"
+                description="What is Achronyme and why should you use it?"
+                href="/docs/getting-started/introduction"
+                icon="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+              />
+              <QuickLink
+                title="Installation"
+                description="Get Achronyme installed on your system."
+                href="/docs/getting-started/installation"
+                icon="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25"
+              />
+              <QuickLink
+                title="Quick Start"
+                description="Write your first Achronyme program."
+                href="/docs/getting-started/quick-start"
+                icon="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+              />
+              <QuickLink
+                title="REPL"
+                description="Interactive programming with the REPL."
+                href="/docs/getting-started/repl"
+                icon="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"
+              />
+            </QuickLinks>
+
+            <h2>Core Concepts</h2>
+            <p>
+              Understand the fundamental building blocks of the language.
+            </p>
+
+            <ul>
+              <li><a href="/docs/core-language/syntax-basics">Syntax Basics</a> - Variables, expressions, and statements</li>
+              <li><a href="/docs/core-language/data-types">Data Types</a> - Numbers, complex, tensors, records</li>
+              <li><a href="/docs/core-language/functions">Functions</a> - Lambda expressions and closures</li>
+              <li><a href="/docs/core-language/control-flow">Control Flow</a> - Conditionals and branching</li>
+            </ul>
+
+            <h2>Advanced Features</h2>
+            <p>
+              Explore the powerful features that make Achronyme ideal for scientific computing.
+            </p>
+
+            <ul>
+              <li><a href="/docs/mathematical-computing/linear-algebra">Linear Algebra</a> - Matrix operations and decompositions</li>
+              <li><a href="/docs/specialized-modules/dsp">Digital Signal Processing</a> - FFT, convolution, filters</li>
+              <li><a href="/docs/advanced-topics/pattern-matching">Pattern Matching</a> - Expressive control flow</li>
+              <li><a href="/docs/advanced-topics/modules">Module System</a> - Code organization and reuse</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
