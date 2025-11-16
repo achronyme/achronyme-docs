@@ -22,6 +22,7 @@ const changelogCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     breaking: z.boolean().default(false),
+    status: z.enum(['Released', 'Unreleased']).default('Released'),
     highlights: z.array(z.string()).optional(),
   }),
 });
