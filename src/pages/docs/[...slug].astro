@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import DocsLayout from '../../layouts/DocsLayout.astro';
 
 export async function getStaticPaths() {
-  const docs = await getCollection('docs');
+  const docs = await getCollection('language');
   return docs.map((doc) => ({
     params: { slug: doc.slug },
     props: { doc },
